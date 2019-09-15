@@ -36,7 +36,7 @@ brew install budougumi0617/dkl
 
 
 ## Contribution
-1. Fork ([https://github.com/budougumi0617/dkl/fork](https://github.com/budougumi0617/dkl/fork)
+1. Fork ([https://github.com/budougumi0617/dkl/fork](https://github.com/budougumi0617/dkl/fork))
 2. Create a feature branch
 3. Commit your changes
 4. Rebase your local changes against the master branch
@@ -46,6 +46,9 @@ brew install budougumi0617/dkl
 
 ## License
 
-[MIT](https://github.com/budougumi0617/dtt-go/blob/master/LICENSE)
+[MIT](https://github.com/budougumi0617/dkl/blob/master/LICENSE)
+
+## Author
+[budougumi0617](https://github.com/budougumi0617)
 
 [dtt]: https://github.com/ymizushi/dtt
