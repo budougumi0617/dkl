@@ -42,7 +42,7 @@ brews:
     # Template for the url which is determined by the given Token (github or gitlab)
     # Default for github is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     # Default for gitlab is "https://gitlab.com/<repo_owner>/<repo_name>/uploads/{{ .ArtifactUploadHash }}/{{ .ArtifactName }}"
-    url_template: "http://github.com/budougumi0617/dkl/releases/{{ .Tag }}/{{ .ArtifactName }}"
+    url_template: "https://github.com/budougumi0617/dkl/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
 
     # Git author used to commit to the repository.
     # Defaults are shown.
@@ -62,7 +62,6 @@ brews:
     # Default is empty.
     test: |
       system "#{bin}/dkl --version"
-      ...
 
     # Custom install script for brew.
     # Default is 'bin.install "program"'.
