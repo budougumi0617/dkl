@@ -15,6 +15,8 @@ require (
 	github.com/gogo/protobuf v1.3.0 // indirect
 	github.com/gorilla/mux v1.7.3 // indirect
 	github.com/manifoldco/promptui v0.3.2
+	github.com/nicksnyder/go-i18n v1.10.1 // indirect
+	github.com/nicksnyder/go-i18n/v2 v2.0.2 // indirect
 	github.com/opencontainers/go-digest v1.0.0-rc1 // indirect
 	github.com/opencontainers/image-spec v1.0.1 // indirect
 	github.com/sirupsen/logrus v1.4.2 // indirect
@@ -24,3 +26,5 @@ require (
 	gopkg.in/alecthomas/kingpin.v3-unstable v3.0.0-20180810215634-df19058c872c // indirect
 	gotest.tools v2.2.0+incompatible // indirect
 )
+
+replace github.com/nicksnyder/go-i18n v1.10.1 => github.com/nicksnyder/go-i18n/v2 v2.0.2
