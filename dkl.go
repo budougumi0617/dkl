@@ -31,6 +31,7 @@ func Run(args []string, inStream io.Reader, outStream, errStream io.Writer) erro
 		return nil
 	}
 
+	show()
 	fmt.Fprint(outStream, "now implementing...\n")
 
 	return nil
