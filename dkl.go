@@ -1,9 +1,11 @@
 package dkl
 
 import (
+	"context"
 	"flag"
 	"fmt"
 	"io"
+	"os/exec"
 )
 
 const (
@@ -31,8 +33,16 @@ func Run(args []string, inStream io.Reader, outStream, errStream io.Writer) erro
 		return nil
 	}
 
-	show()
-	fmt.Fprint(outStream, "now implementing...\n")
+	container, err := show()
+	if err != nil {
+		return err
+	}
 
-	return nil
+	cmd := []string{"/bin/bash"}
+	execCmd := execCmd(container.ID, cmd)
+	dcmd := exec.CommandContext(context.Background(), execCmd[0], execCmd[1:]...)
+	dcmd.Stdin = inStream
+	dcmd.Stdout = outStream
+	dcmd.Stderr = errStream
+	return dcmd.Run()
 }
