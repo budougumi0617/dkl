@@ -27,7 +27,7 @@ require (
 	google.golang.org/grpc v1.23.1 // indirect
 	gopkg.in/alecthomas/kingpin.v3-unstable v3.0.0-20180810215634-df19058c872c // indirect
 	gotest.tools v2.2.0+incompatible // indirect
-	k8s.io/api v0.0.0-20190919035539-41700d9d0c5b // indirect
+	k8s.io/api v0.0.0-20190919035539-41700d9d0c5b
 	k8s.io/apimachinery v0.0.0-20190917163033-a891081239f5
 	// kubernetes v12.0
 	k8s.io/client-go v0.0.0-20190918035823-297c8350f5d7

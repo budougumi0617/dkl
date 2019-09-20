@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 
+	v1 "k8s.io/api/core/v1"
 	meta_v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
@@ -22,7 +23,8 @@ func getPods() {
 
 	for _, pod := range pods.Items {
 		fmt.Println(pod.Name, pod.Namespace)
-		fmt.Printf("pod info  = %+v\n", pod)
+		//		fmt.Printf("pod info  = %+v\n", pod)
+		execk8s(pod, []string{"sh"})
 	}
 }
 
@@ -33,4 +35,12 @@ func newClient() (kubernetes.Interface, error) {
 	}
 
 	return kubernetes.NewForConfig(kubeConfig)
+}
+
+func buildKubernetesCmd(pod v1.Pod, cmd []string) []string {
+	res := []string{"kubectl", "exec", "-it", pod.Name}
+	res = append(res, cmd...)
+	res = append(res, "-n", pod.Namespace)
+	fmt.Printf("res = %+v\n", res)
+	return res
 }
