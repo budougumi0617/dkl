@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"strings"
+	"time"
 
 	"github.com/manifoldco/promptui"
 	v1 "k8s.io/api/core/v1"
@@ -22,17 +23,24 @@ func getPods() (*v1.Pod, error) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Printf("pods.Item[0] = %+v\n", pods.Items[0])
 
 	templates := &promptui.SelectTemplates{
 		Label:    "{{ . }}?",
-		Active:   "\u2388 {{ .Name | cyan }} ({{ .Namespace | red }})",
-		Inactive: "   {{ .Name | cyan }} ({{ .Namespace | red }})",
-		Selected: "\u2388 executed {{ .Name| red }}",
+		Active:   "\u2388 {{ .Name | cyan }} ({{ .Namespace | red }} {{ .Status.Phase }})",
+		Inactive: "  {{ .Name | cyan }} ({{ .Namespace | red }} {{ .Status.Phase }})",
+		Selected: "\u2388 executed {{ .Name | red }}",
 		Details: `
 --------- Pod ----------
 {{ "Name:" | faint }}	{{ printf "%q" .Name }}
-{{ "Namespacege:" | faint }}	{{ .Namespace }}`,
+{{ "Namespacege:" | faint }}	{{ .Namespace }}
+{{ "Status:" | faint }}	{{ .Status.Phase }}
+{{ "Age:" | faint }}	{{ now | since  | print }}`,
+		// {{ "Age:" | faint }}	{{ now | since .CreationTimestamp | print }}`,
+		FuncMap: promptui.FuncMap,
 	}
+	templates.FuncMap["since"] = time.Since
+	templates.FuncMap["now"] = time.Now
 
 	searcher := func(input string, index int) bool {
 		pod := pods.Items[index]
