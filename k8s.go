@@ -23,7 +23,6 @@ func getPods() (*v1.Pod, error) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("pods.Item[0] = %+v\n", pods.Items[0])
 
 	templates := &promptui.SelectTemplates{
 		Label:    "{{ . }}?",
@@ -35,12 +34,10 @@ func getPods() (*v1.Pod, error) {
 {{ "Name:" | faint }}	{{ printf "%q" .Name }}
 {{ "Namespacege:" | faint }}	{{ .Namespace }}
 {{ "Status:" | faint }}	{{ .Status.Phase }}
-{{ "Age:" | faint }}	{{ now | since  | print }}`,
-		// {{ "Age:" | faint }}	{{ now | since .CreationTimestamp | print }}`,
+{{ "Age:" | faint }}	{{ .CreationTimestamp.Time | since | print }}`,
 		FuncMap: promptui.FuncMap,
 	}
 	templates.FuncMap["since"] = time.Since
-	templates.FuncMap["now"] = time.Now
 
 	searcher := func(input string, index int) bool {
 		pod := pods.Items[index]
