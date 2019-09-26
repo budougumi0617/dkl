@@ -24,11 +24,15 @@ func show() (*types.Container, error) {
 		panic(err)
 	}
 
+	if len(containers) == 0 {
+		return nil, fmt.Errorf("running container is not found.")
+	}
+
 	templates := &promptui.SelectTemplates{
 		Label:    "{{ . }}?",
 		Active:   "\U0001F40B {{ index .Names 0 | cyan }} ({{ .Image | red }}, {{ .ImageID }})",
 		Inactive: "   {{ index .Names 0 | cyan }} ({{ .Image | red }}, {{ .ImageID  }})",
-		Selected: "\U0001F336 {{ index .Names 0 | red }}",
+		Selected: "\U0001F40B {{ index .Names 0 | red }}",
 		Details: `
 --------- Image ----------
 {{ "Name:" | faint }}	{{ printf "%q" .Names }}
@@ -145,7 +149,7 @@ func execDocker(cid string, cmd []string, ins io.Reader) (ExecResult, error) {
 	return ExecResult{ExitCode: iresp.ExitCode, outBuffer: &outBuf, errBuffer: &errBuf}, nil
 }
 
-func execCmd(cid string, cmd []string) []string {
+func buildDockerCmd(cid string, cmd []string) []string {
 	res := []string{"docker", "exec", "-i", "-t", cid}
 	res = append(res, cmd...)
 	return res
