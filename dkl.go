@@ -9,13 +9,13 @@ import (
 )
 
 const (
-	version = "0.0.0"
+	version = "0.0.1"
 )
 
 // Run is entry point.
 func Run(args []string, inStream io.Reader, outStream, errStream io.Writer) error {
 	var v, d, k bool
-	vdesc := "Print version information and quit."
+	vdesc := "print version information and quit."
 	ddesc := "list docker containers and exec selected container."
 	kdesc := "list pods and exec selected pod."
 	cmdName := args[0]

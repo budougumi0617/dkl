@@ -3,25 +3,27 @@ Pure Go implementation of [dtt][dtt].
 
 ## Description
 Pure Go implementation of [dtt][dtt].  
-dkl is the text-mode interface for docker and kubectl command.
+dkl is the text-mode interface for docker and kubectl command. dkl shows containers(or pods), and exec(login) selected it.
 
 ## Demo & VS.
 
 ## Requirement
+Need `docker`, and `kubectl` commands.
 
 ## Usage
 
 ```
 $ dkl -h
-Usage:
-    dkl
-    dkl -k | --kubectl
-    dkl -h | --help
-    dkl -c | --config
-Options:
-    -k --kubectl             kubectl mode
-    -h --help                Show this screen and exit.
-    -c --config              Show config
+Usage of dkl:
+  -d    list docker containers and exec selected container.
+  -docker
+        list docker containers and exec selected container.
+  -k    list pods and exec selected pod.
+  -kubernetes
+        list pods and exec selected pod.
+  -v    Print version information and quit.
+  -version
+        Print version information and quit.
 ```
 
 ## Install
@@ -30,8 +32,7 @@ You can download binary from [release page](https://github.com/budougumi0617/dkl
 ### MacOS
 If you want to install on MacOS, you can use Homebrew.
 ```
-brew tap budougumi0617/tap
-brew install budougumi0617/dkl
+brew install budougumi0617/tap/dkl
 ```
 
 
