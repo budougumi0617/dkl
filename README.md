@@ -6,6 +6,7 @@ Pure Go implementation of [dtt][dtt].
 dkl is the text-mode interface for docker and kubectl command. dkl shows containers(or pods), and exec(login) selected it.
 
 ## Demo & VS.
+![demo](./demo.gif)
 
 ## Requirement
 Need `docker`, and `kubectl` commands.
