@@ -25,7 +25,7 @@ func show() (*types.Container, error) {
 	}
 
 	if len(containers) == 0 {
-		return nil, fmt.Errorf("running container is not found.")
+		return nil, fmt.Errorf("running container is not found")
 	}
 
 	templates := &promptui.SelectTemplates{

@@ -1,0 +1,22 @@
+name: Test and Build
+on: push
+jobs:
+  fmt:
+    name: Fmt
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: grandcolline/golang-github-actions@v1.0.0
+      with:
+        run: fmt
+        comment: false
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: grandcolline/golang-github-actions@v1.0.0
+      with:
+        run: lint
+        comment: false
