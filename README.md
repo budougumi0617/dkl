@@ -1,4 +1,6 @@
 # dkl
+![github actions badges](https://github.com/budougumi0617/dkl/workflows/Test%20and%20Build/badge.svg)
+
 Pure Go implementation of [dtt][dtt].
 
 ## Description
