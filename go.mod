@@ -13,7 +13,7 @@ require (
 	github.com/docker/docker v1.4.2-0.20181026133427-e238713cc9da
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.4.0 // indirect
-	github.com/gogo/protobuf v1.3.0 // indirect
+	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/googleapis/gnostic v0.3.1 // indirect
 	github.com/gorilla/mux v1.7.3 // indirect
 	github.com/imdario/mergo v0.3.7 // indirect
@@ -28,10 +28,7 @@ require (
 	github.com/sirupsen/logrus v1.4.2 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	golang.org/x/lint v0.0.0-20190909230951-414d861bb4ac // indirect
-	golang.org/x/net v0.0.0-20190912160710-24e19bdeb0f2 // indirect
-	golang.org/x/sys v0.0.0-20190922100055-0a153f010e69 // indirect
 	golang.org/x/time v0.0.0-20190308202827-9d24e82272b4 // indirect
-	golang.org/x/tools v0.0.0-20190920225731-5eefd052ad72 // indirect
 	google.golang.org/grpc v1.23.1 // indirect
 	gopkg.in/alecthomas/kingpin.v3-unstable v3.0.0-20180810215634-df19058c872c // indirect
 	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
