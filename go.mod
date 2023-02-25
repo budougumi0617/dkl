@@ -37,7 +37,7 @@ require (
 	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
 	gotest.tools v2.2.0+incompatible // indirect
 	k8s.io/api v0.0.0-20190919035539-41700d9d0c5b
-	k8s.io/apimachinery v0.0.0-20190917163033-a891081239f5
+	k8s.io/apimachinery v0.15.7
 	// kubernetes v12.0
 	k8s.io/client-go v0.0.0-20190918035823-297c8350f5d7
 	k8s.io/utils v0.0.0-20190907131718-3d4f5b7dea0b // indirect
