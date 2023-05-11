@@ -8,7 +8,7 @@ require (
 	github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5 // indirect
 	github.com/alecthomas/gometalinter v3.0.0+incompatible // indirect
 	github.com/alecthomas/units v0.0.0-20190910110746-680d30ca3117 // indirect
-	github.com/docker/distribution v2.7.1+incompatible // indirect
+	github.com/docker/distribution v2.8.2+incompatible // indirect
 	// Docker API version 1.40
 	github.com/docker/docker v1.4.2-0.20181026133427-e238713cc9da
 	github.com/docker/go-connections v0.4.0 // indirect
